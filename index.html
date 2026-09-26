@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="NYIMBO ZA UMOJA — Programu ya Android ya nyimbo za Umoja. Pakua bure.">
+          content="NYIMBO ZA UMOJA — Enjoy Umoja songs with our Android application.">
 
     <meta name="theme-color" content="#0f172a">
 
-    <title>NYIMBO ZA UMOJA | Programu ya Android</title>
+    <title>NYIMBO ZA UMOJA | Android App</title>
 
     <style>
         * {
@@ -25,10 +23,7 @@
         }
 
         body {
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #f8fafc;
             color: #172033;
             line-height: 1.6;
@@ -37,11 +32,11 @@
         header {
             background: #0f172a;
             color: white;
-            padding: 18px 20px;
+            padding: 16px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
         }
 
         .nav {
@@ -50,12 +45,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 800;
             letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
 
         .nav-link {
@@ -70,15 +73,24 @@
             opacity: 1;
         }
 
-        .hero {
-            background:
-                linear-gradient(
-                    135deg,
-                    #0f172a 0%,
-                    #1e3a5f 55%,
-                    #2563eb 100%
-                );
+        .language-select {
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.08);
+            color: white;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 13px;
+            cursor: pointer;
+            outline: none;
+        }
 
+        .language-select option {
+            color: #111827;
+            background: white;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 55%, #2563eb 100%);
             color: white;
             padding: 85px 20px 100px;
             text-align: center;
@@ -115,21 +127,14 @@
             width: 90px;
             height: 90px;
             margin: 0 auto 25px;
-
             border-radius: 50%;
-
-            background: rgba(255, 255, 255, 0.12);
-
+            background: rgba(255,255,255,0.12);
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-size: 42px;
-
             border: 1px solid rgba(255,255,255,0.2);
-
-            box-shadow:
-                0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
         .hero h1 {
@@ -151,36 +156,20 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-
             background: white;
             color: #0f172a;
-
             text-decoration: none;
-
             padding: 17px 32px;
-
             border-radius: 12px;
-
             font-size: 18px;
             font-weight: 800;
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.2);
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .download-button:hover {
             transform: translateY(-3px);
-
-            box-shadow:
-                0 15px 35px rgba(0,0,0,0.3);
-        }
-
-        .download-button:active {
-            transform: translateY(0);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
         .version {
@@ -214,52 +203,34 @@
 
         .features {
             display: grid;
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
         .feature {
             background: white;
-
             padding: 32px 25px;
-
             border-radius: 18px;
-
             text-align: center;
-
             border: 1px solid #e2e8f0;
-
-            box-shadow:
-                0 8px 25px rgba(15, 23, 42, 0.05);
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+            box-shadow: 0 8px 25px rgba(15,23,42,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .feature:hover {
             transform: translateY(-5px);
-
-            box-shadow:
-                0 15px 35px rgba(15, 23, 42, 0.1);
+            box-shadow: 0 15px 35px rgba(15,23,42,0.1);
         }
 
         .feature-icon {
             width: 65px;
             height: 65px;
-
             margin: 0 auto 20px;
-
             border-radius: 16px;
-
             background: #eff6ff;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-size: 30px;
         }
 
@@ -276,14 +247,10 @@
 
         .about {
             margin-top: 70px;
-
             background: #0f172a;
             color: white;
-
             border-radius: 25px;
-
             padding: 55px 35px;
-
             text-align: center;
         }
 
@@ -295,9 +262,7 @@
         .about p {
             max-width: 700px;
             margin: auto;
-
             color: #cbd5e1;
-
             font-size: 17px;
         }
 
@@ -322,22 +287,14 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-
             background: #2563eb;
             color: white;
-
             text-decoration: none;
-
             padding: 16px 30px;
-
             border-radius: 12px;
-
             font-weight: 800;
             font-size: 17px;
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease;
+            transition: transform 0.2s ease, background 0.2s ease;
         }
 
         .download-button-dark:hover {
@@ -348,11 +305,8 @@
         footer {
             background: #020617;
             color: #94a3b8;
-
             text-align: center;
-
             padding: 30px 20px;
-
             font-size: 14px;
         }
 
@@ -361,13 +315,29 @@
         }
 
         @media (max-width: 750px) {
-
             header {
-                padding: 16px;
+                padding: 14px 16px;
+            }
+
+            .nav {
+                align-items: flex-start;
             }
 
             .logo {
-                font-size: 17px;
+                font-size: 16px;
+            }
+
+            .nav-right {
+                gap: 10px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            .language-select {
+                padding: 7px 8px;
+                font-size: 12px;
             }
 
             .hero {
@@ -409,6 +379,9 @@
         }
 
         @media (max-width: 400px) {
+            .logo {
+                font-size: 14px;
+            }
 
             .hero {
                 padding-left: 15px;
@@ -434,19 +407,26 @@
 <body>
 
 <header>
-
     <div class="nav">
 
         <div class="logo">
             🎵 NYIMBO ZA UMOJA
         </div>
 
-        <a href="#kuhusu" class="nav-link">
-            Kuhusu
-        </a>
+        <div class="nav-right">
+            <a href="#about" class="nav-link" data-i18n="aboutNav">About</a>
+
+            <select
+                id="languageSelect"
+                class="language-select"
+                aria-label="Select language"
+            >
+                <option value="en">🇬🇧 English</option>
+                <option value="sw">🇰🇪 Kiswahili</option>
+            </select>
+        </div>
 
     </div>
-
 </header>
 
 <section class="hero">
@@ -461,20 +441,19 @@
             NYIMBO ZA UMOJA
         </h1>
 
-        <p class="hero-subtitle">
-            Furahia nyimbo zako za Umoja kupitia programu yetu
-            rahisi, nyepesi na ya Android.
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+            Enjoy your Umoja songs through our simple, lightweight Android application.
         </p>
 
         <a
             class="download-button"
             href="https://github.com/Rogerrotich/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk"
         >
-            📥 PAKUA APP
+            📥 <span data-i18n="downloadApp">DOWNLOAD APP</span>
         </a>
 
-        <p class="version">
-            Toleo 1.0.0 • Android
+        <p class="version" data-i18n="version">
+            Version 1.0.0 • Android
         </p>
 
     </div>
@@ -485,17 +464,15 @@
 
     <div class="section-title">
 
-        <h2>
-            Kwa nini NYIMBO ZA UMOJA?
+        <h2 data-i18n="whyTitle">
+            Why NYIMBO ZA UMOJA?
         </h2>
 
-        <p>
-            Programu iliyoundwa kukuwezesha kufurahia
-            nyimbo zako kwa urahisi.
+        <p data-i18n="whySubtitle">
+            A simple application designed to make enjoying your songs easy.
         </p>
 
     </div>
-
 
     <div class="features">
 
@@ -505,17 +482,15 @@
                 🎶
             </div>
 
-            <h3>
-                Nyimbo
+            <h3 data-i18n="songsTitle">
+                Songs
             </h3>
 
-            <p>
-                Sikiliza na furahia mkusanyiko wa nyimbo
-                kupitia programu yako ya Android.
+            <p data-i18n="songsText">
+                Enjoy your collection of Umoja songs through your Android application.
             </p>
 
         </div>
-
 
         <div class="feature">
 
@@ -523,17 +498,15 @@
                 📱
             </div>
 
-            <h3>
-                Rahisi Kutumia
+            <h3 data-i18n="easyTitle">
+                Easy to Use
             </h3>
 
-            <p>
-                Muonekano rahisi na unaofaa kwa matumizi
-                ya kila siku kwenye simu yako.
+            <p data-i18n="easyText">
+                A simple interface designed for comfortable everyday use on your phone.
             </p>
 
         </div>
-
 
         <div class="feature">
 
@@ -541,33 +514,26 @@
                 ⚡
             </div>
 
-            <h3>
-                Nyepesi
+            <h3 data-i18n="lightTitle">
+                Lightweight
             </h3>
 
-            <p>
-                Programu imeundwa kuwa rahisi kutumia
-                bila mambo yasiyo ya lazima.
+            <p data-i18n="lightText">
+                Designed to be simple and focused, without unnecessary complications.
             </p>
 
         </div>
 
     </div>
 
-    <section
-        class="about"
-        id="kuhusu"
-    >
+    <section class="about" id="about">
 
-        <h2>
-            Karibu NYIMBO ZA UMOJA
+        <h2 data-i18n="aboutTitle">
+            Welcome to NYIMBO ZA UMOJA
         </h2>
 
-        <p>
-            NYIMBO ZA UMOJA ni programu ya Android
-            inayokupa nafasi ya kufurahia nyimbo zako
-            za Umoja kwa urahisi. Pakua programu na
-            anza kutumia leo.
+        <p data-i18n="aboutText">
+            NYIMBO ZA UMOJA is an Android application that gives you an easy way to enjoy your Umoja songs. Download the app and get started today.
         </p>
 
     </section>
@@ -576,19 +542,19 @@
 
 <section class="download-section">
 
-    <h2>
-        Uko tayari kuanza?
+    <h2 data-i18n="readyTitle">
+        Ready to get started?
     </h2>
 
-    <p>
-        Pakua NYIMBO ZA UMOJA kwa Android.
+    <p data-i18n="readyText">
+        Download NYIMBO ZA UMOJA for Android.
     </p>
 
     <a
         class="download-button-dark"
         href="https://github.com/Rogerrotich/nyimbo-za-umoja/releases/download/v1.0.0/NYIMBO-ZA-UMOJA-v1.0.0.apk"
     >
-        📥 PAKUA NYIMBO ZA UMOJA
+        📥 <span data-i18n="downloadFull">DOWNLOAD NYIMBO ZA UMOJA</span>
     </a>
 
 </section>
@@ -598,10 +564,83 @@
     <p>
         © 2026
         <strong>NYIMBO ZA UMOJA</strong>.
-        Haki zote zimehifadhiwa.
+        <span data-i18n="rights">All rights reserved.</span>
     </p>
 
 </footer>
+
+<script>
+    const translations = {
+        en: {
+            aboutNav: "About",
+            heroSubtitle: "Enjoy your Umoja songs through our simple, lightweight Android application.",
+            downloadApp: "DOWNLOAD APP",
+            version: "Version 1.0.0 • Android",
+            whyTitle: "Why NYIMBO ZA UMOJA?",
+            whySubtitle: "A simple application designed to make enjoying your songs easy.",
+            songsTitle: "Songs",
+            songsText: "Enjoy your collection of Umoja songs through your Android application.",
+            easyTitle: "Easy to Use",
+            easyText: "A simple interface designed for comfortable everyday use on your phone.",
+            lightTitle: "Lightweight",
+            lightText: "Designed to be simple and focused, without unnecessary complications.",
+            aboutTitle: "Welcome to NYIMBO ZA UMOJA",
+            aboutText: "NYIMBO ZA UMOJA is an Android application that gives you an easy way to enjoy your Umoja songs. Download the app and get started today.",
+            readyTitle: "Ready to get started?",
+            readyText: "Download NYIMBO ZA UMOJA for Android.",
+            downloadFull: "DOWNLOAD NYIMBO ZA UMOJA",
+            rights: "All rights reserved."
+        },
+
+        sw: {
+            aboutNav: "Kuhusu",
+            heroSubtitle: "Furahia nyimbo zako za Umoja kupitia programu yetu rahisi na nyepesi ya Android.",
+            downloadApp: "PAKUA APP",
+            version: "Toleo 1.0.0 • Android",
+            whyTitle: "Kwa nini NYIMBO ZA UMOJA?",
+            whySubtitle: "Programu rahisi iliyoundwa kukuwezesha kufurahia nyimbo zako kwa urahisi.",
+            songsTitle: "Nyimbo",
+            songsText: "Furahia mkusanyiko wa nyimbo za Umoja kupitia programu yako ya Android.",
+            easyTitle: "Rahisi Kutumia",
+            easyText: "Muonekano rahisi ulioundwa kwa matumizi ya kila siku kwenye simu yako.",
+            lightTitle: "Nyepesi",
+            lightText: "Imeundwa kuwa rahisi na yenye kuzingatia unachohitaji bila mambo yasiyo ya lazima.",
+            aboutTitle: "Karibu NYIMBO ZA UMOJA",
+            aboutText: "NYIMBO ZA UMOJA ni programu ya Android inayokupa njia rahisi ya kufurahia nyimbo zako za Umoja. Pakua programu na anza kutumia leo.",
+            readyTitle: "Uko tayari kuanza?",
+            readyText: "Pakua NYIMBO ZA UMOJA kwa Android.",
+            downloadFull: "PAKUA NYIMBO ZA UMOJA",
+            rights: "Haki zote zimehifadhiwa."
+        }
+    };
+
+    const languageSelect = document.getElementById("languageSelect");
+
+    function setLanguage(language) {
+        const selected = translations[language] ? language : "en";
+
+        document.documentElement.lang = selected;
+
+        document.querySelectorAll("[data-i18n]").forEach(element => {
+            const key = element.getAttribute("data-i18n");
+
+            if (translations[selected][key]) {
+                element.textContent = translations[selected][key];
+            }
+        });
+
+        localStorage.setItem("nyimboLanguage", selected);
+        languageSelect.value = selected;
+    }
+
+    const savedLanguage = localStorage.getItem("nyimboLanguage") || "en";
+
+    setLanguage(savedLanguage);
+
+    languageSelect.addEventListener("change", function () {
+        setLanguage(this.value);
+    });
+</script>
 
 </body>
 </html>
